@@ -3,39 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReVeste - Página Inicial</title>
+  <title>ReVeste - Seu brechó online gratuito</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao ReVeste!</h1>
-    <p>Seu brechó online de roupas gratuitas.</p>
+  <header class="cabecalho">
+    <div class="container">
+      <div class="logo">
+        <img src="img/image (16).png" alt="Ícone de cabide">
+        <h1>ReVeste</h1>
+      </div>
+      <nav class="menu_principal">
+        <ul>
+          <li><a href="#"><img src="img/coracao.png" alt="Ícone de coração"></a></li>
+          <li><a href="#">Chat</a></li>
+          <li><a href="perfil.html">Perfil</a></li>
+          <li><a href="login.html"><img src="img/fotoperfil.jpeg" alt="Ícone de usuário"></a></li>      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>O que você deseja fazer?</h2>
-      <div>
-        <a href="login.html">
-          <button>Fazer Login</button>
-        </a>
-        <a href="registro.html">
-          <button>Registrar-se</button>
-        </a>
+  <main class="principal">
+    <section class="secao_busca">
+      <div class="container">
+        <input type="text" placeholder="Buscar peças de roupa...">
+      </div>
+    </section>
+    <section id="todas-as-categorias" class="secao_produtos">
+      <div class="container">
+        <h2>Categorias</h2>
+        <div class="lista_itens">
+          <div class="item_produto">
+            <img src="img/vestidofem.jpeg" alt="Feminino">
+            <p class="nome_produto">Feminino</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/BlusaMasc.jpeg" alt="Blusa_Masculina">
+            <p class="nome_produto">Blusa Masculina</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/VansMasc.jpeg" alt="Sapatos">
+            <p class="nome_produto">Sapatos</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/inverno.jpeg" alt="Inverno">
+            <p class="nome_produto">Inverno</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/Veraotop.jpeg" alt="Verao">
+            <p class="nome_produto">Verão</p>
+          </div>
+            <div class="item_produto">
+            <img src="img/infantil.jpeg" alt="infantil">
+            <p class="nome_produto">Infantil</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Sobre o ReVeste</h2>
-      <p>
-        O ReVeste é uma plataforma onde você pode doar e receber roupas de brechó gratuitamente.
-        Ajude o meio ambiente e economize dinheiro!
-      </p>
+    <section id="mais-procurados-inverno" class="secao_produtos">
+      <div class="container">
+        <h2>Mais procurados Inverno</h2>
+        <div class="lista_itens">
+          <div class="item_produto">
+            <img src="img/MoletomMarrom.jpeg" alt="Casaco Marrom P">
+            <p class="nome_produto">Casaco Marrom P</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/Calcamole.jpeg" alt="Calça de moletom">
+            <p class="nome_produto">Calça de moletom</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/jaqwueta.jpeg" alt="Jaqueta de couro">
+            <p class="nome_produto">Jaqueta de couro</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/JaquetaInverno.jpeg" alt="Casaco Inverno">
+            <p class="nome_produto">Casaco Inverno</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mais-procurados-feminino" class="secao_produtos">
+      <div class="container">
+        <h2>Mais procurados Feminino</h2>
+        <div class="lista_itens">
+          <div class="item_produto">
+            <img src="img/vestido_verde.jpg" alt="Vestido Verde">
+            <p class="nome_produto">Vestido Verde</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/blusa_branca.jpg" alt="Blusa Branca">
+            <p class="nome_produto">Blusa Branca</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/vestido_creme.jpg" alt="Vestido Creme">
+            <p class="nome_produto">Vestido Creme</p>
+          </div>
+          <div class="item_produto">
+            <img src="img/tenis_allstar.jpg" alt="Tênis All Star">
+            <p class="nome_produto">Tênis All Star</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2023 ReVeste. Todos os direitos reservados.</p>
+  <footer class="rodape">
+    <div class="container">
+      <p>&copy; 2025 ReVeste - Todos os direitos reservados.</p>
+    </div>
   </footer>
+
+  <script src="js/telainicial.js"></script>
 </body>
 </html>

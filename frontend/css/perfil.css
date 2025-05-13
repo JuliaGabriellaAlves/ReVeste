@@ -1,0 +1,125 @@
+/* Estilos para a página perfil.html - ReVeste */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cabecalho {
+    background-color: #8BC34A;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho .logo {
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho .logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.cabecalho .logo h1 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.cabecalho .menu_principal ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho .menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cabecalho .menu_principal a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.principal {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #EFEFEF;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.container {
+    padding: 30px;
+    flex-grow: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container .info-perfil {
+    margin-bottom: 15px;
+}
+
+.container .info-perfil label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.container .info-perfil input, .container .info-perfil textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F9F9F9;
+    font-size: 14px;
+}
+
+.rodape {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+}

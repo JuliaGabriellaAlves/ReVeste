@@ -1,75 +1,156 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    color: #444;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  section {
-    margin-bottom: 20px;
-  }
-  
-  section h2 {
-    font-size: 2rem;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  section p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #666;
-  }
+/* Estilos gerais */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  /* AJUSTE: Cor de fundo principal para branco, como na imagem */
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos do cabeçalho */
+.cabecalho {
+  /* AJUSTE: Tente um verde mais claro. Ex: #8BC34A ou use um seletor de cores para pegar da imagem */
+  background-color: #8BC34A; /* Exemplo de verde mais claro */
+  color: #fff;
+  padding: 15px 0;
+}
+
+.cabecalho .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px; /* Na imagem, o ícone do cabide parece um pouco maior, talvez 35-40px */
+  margin-right: 10px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px; /* O tamanho da fonte "ReVeste" na imagem parece maior */
+}
+
+.menu_principal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu_principal li {
+  margin-left: 20px;
+}
+
+.menu_principal li:first-child {
+  margin-left: 0;
+}
+
+.menu_principal a {
+  color: #fff;
+  text-decoration: none;
+  /* A fonte dos links "Chat" e "Perfil" na imagem parece ser branca. Já está ok. */
+}
+
+.menu_principal a img {
+  height: 25px; /* Os ícones de coração e perfil parecem ter um bom tamanho */
+  vertical-align: middle;
+}
+
+/* Estilos da seção de busca */
+.secao_busca {
+  padding: 20px 0;
+  /* AJUSTE: Fundo da seção de busca para branco ou cinza muito claro */
+  background-color: #fff; /* ou um cinza como #f0f0f0 */
+}
+
+.secao_busca .container input[type="text"] {
+  width: 100%;
+  padding: 10px 15px; /* Aumentar um pouco o padding para altura */
+  border: 1px solid #e0e0e0; /* Borda cinza clara */
+  border-radius: 20px;      /* Mais arredondado como na imagem */
+  font-size: 16px;
+  box-sizing: border-box;
+  /* AJUSTE: Cor de fundo do input */
+  background-color: #f0f0f0; /* Cinza claro para o input */
+}
+
+.secao_busca .container input[type="text"]::placeholder {
+  color: #888; /* Cor do placeholder */
+}
+
+
+/* Estilos das seções de produtos */
+.secao_produtos {
+  padding: 30px 0;
+  /* AJUSTE: Fundo das seções para branco */
+  background-color: #fff;
+}
+
+.secao_produtos h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left; /* Na imagem, os títulos "Mais procurados Inverno" etc., estão à esquerda */
+  font-size: 20px;  /* Ajuste o tamanho conforme a imagem */
+}
+
+.lista_itens {
+  display: flex;
+  flex-wrap: wrap; /* Mantém wrap se precisar de múltiplas linhas */
+  gap: 20px;
+  /* justify-content: center;  Na imagem, parece alinhado à esquerda ou com espaço entre os itens */
+  justify-content: space-between; /* Ou flex-start se quiser tudo junto à esquerda */
+}
+
+.item_produto {
+  background-color: #fff; /* O fundo do card em si */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Vamos ajustar isso depois para o efeito da imagem */
+  overflow: hidden; /* Importante para o arredondamento da imagem */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 200px; /* O tamanho parece bom, podemos ajustar se necessário */
+  position: relative; /* Necessário para posicionar o nome_produto absolutamente */
+}
+
+.item_produto img {
+  width: 100%;
+  height: auto; /* Ou uma altura fixa se todas as imagens tiverem proporções diferentes */
+  display: block;
+  /* Se for aplicar border-radius apenas na imagem e não no card:
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  */
+}
+
+.item_produto .nome_produto {
+  /* Estes estilos serão drasticamente alterados para sobrepor a imagem */
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos do rodapé */
+.rodape {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.rodape .container p {
+  margin: 0;
+}
