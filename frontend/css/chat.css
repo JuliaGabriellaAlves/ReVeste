@@ -1,0 +1,279 @@
+/* Estilos para a página chat.html - ReVeste */
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Para o título externo ficar acima do cabeçalho */
+    min-height: 100vh;
+}
+
+.pagina-chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupar toda a altura da viewport */
+    width: 100%;
+    max-width: 1400px; /* Um pouco mais largo para acomodar o chat */
+    margin: 0 auto; /* Centraliza se a tela for maior que max-width */
+    box-shadow: 0 0 20px rgba(0,0,0,0.08); /* Sombra sutil no container geral */
+}
+
+.chat-titulo-externo {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff; /* Fundo branco para o título externo */
+    border-bottom: 1px solid #e9ecef;
+    text-align: left;
+    width: calc(100% - 40px); /* Ajusta para padding */
+    max-width: 1360px; /* max-width do container - padding */
+    margin: 0 auto; /* Centraliza */
+}
+
+/* --- Estilos do Cabeçalho (Consistente com outras páginas) --- */
+.cabecalho {
+    background-color: #6A8A65;
+    color: #fff;
+    padding: 12px 0;
+    width: 100%;
+    flex-shrink: 0; /* Não encolher o cabeçalho */
+}
+
+.cabecalho .container-cabecalho {
+    max-width: 1360px; /* Consistente com o título externo e chat-corpo */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove sublinhado do link da logo */
+}
+.logo a { /* Para links envolvendo a logo */
+    text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
+    display: flex;
+    align-items: center;
+}
+
+
+.logo img {
+    height: 38px;
+    margin-right: 12px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu_principal li {
+    margin-left: 25px;
+}
+
+.menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_principal a:hover,
+.menu_principal a.ativo { /* Estilo para link ativo no menu */
+    color: #e0e0e0; /* Um pouco mais claro ou diferente */
+    font-weight: 700; /* Destaca o item ativo */
+}
+
+
+.menu_principal a img { /* Ícone de coração */
+    height: 24px;
+    vertical-align: middle;
+}
+
+.menu_usuario span {
+    margin-right: 8px;
+    font-weight: 400;
+}
+
+.menu_usuario img { /* Ícone de perfil */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+/* --- Layout Principal do Chat --- */
+.chat-corpo {
+    display: flex;
+    flex-grow: 1; /* Ocupa o restante da altura */
+    background-color: #fff;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias no corpo */
+}
+
+/* Coluna da Esquerda: Lista de Conversas */
+.lista-conversas {
+    width: 320px; /* Largura da lista de conversas */
+    border-right: 1px solid #e9ecef;
+    background-color: #f8f9fa; /* Fundo levemente diferente para a lista */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto; /* Rolagem se houver muitas conversas */
+}
+
+.lista-conversas h2 {
+    font-size: 20px;
+    color: #343a40;
+    padding: 20px 20px 15px 20px;
+    margin: 0;
+    font-weight: 700;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.conversas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.conversa-item {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.conversa-item:hover {
+    background-color: #e9ecef;
+}
+
+.conversa-item.ativo {
+    background-color: #e9ecef; /* Fundo destacado para conversa ativa */
+}
+
+.conversa-imagem-produto {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.conversa-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Para o text-overflow funcionar */
+}
+
+.conversa-contato-tempo {
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 2px;
+}
+
+.conversa-produto-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conversa-preview {
+    font-size: 14px;
+    color: #495057;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Coluna da Direita: Área de Chat Ativa / Boas-vindas */
+.area-chat-ativa {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo de boas-vindas */
+    align-items: center;
+    padding: 40px;
+    background-color: #fff; /* Fundo branco para a área de chat */
+    text-align: center;
+}
+
+.chat-boas-vindas {
+    max-width: 500px;
+}
+
+.texto-boas-vindas {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+}
+
+.logo-chat-grande-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-chat-circulo {
+    width: 120px;
+    height: 120px;
+    background-color: #6A8A65; /* Verde principal */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-chat-circulo img {
+    height: 60px; /* Ajuste o tamanho do cabide interno */
+    filter: brightness(0) invert(1); /* Deixa o cabide branco */
+}
+
+.logo-chat-texto-grande {
+    font-size: 48px;
+    font-weight: 700;
+    color: #6A8A65; /* Verde principal */
+    margin: 0 0 10px 0;
+    /* Poderia usar uma fonte mais estilizada aqui se quisesse */
+}
+
+.logo-chat-subtexto {
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Para quando o chat real for implementado, você esconderia .chat-boas-vindas */
+/* e mostraria a interface de mensagens aqui */

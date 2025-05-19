@@ -5,56 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReVeste - Seu brechó online gratuito</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="cabecalho">
     <div class="container">
       <div class="logo">
         <img src="img/image (16).png" alt="Ícone de cabide">
+        <li><a href="chat.html">Chat</a></li>
         <h1>ReVeste</h1>
       </div>
-      <nav class="menu_principal">
+           <nav class="menu_principal">
         <ul>
           <li><a href="#"><img src="img/coracao.png" alt="Ícone de coração"></a></li>
-          <li><a href="#">Chat</a></li>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="login.html"><img src="img/fotoperfil.jpeg" alt="Ícone de usuário"></a></li>      </nav>
+          <li><a href="chat.html">Chat</a></li>
+          <li>
+            <a href="perfil.html" class="menu_usuario">
+              <span>Joana</span>
+              <img src="img/fotoperfil.jpeg" alt="Foto de Joana">
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <main class="principal">
     <section class="secao_busca">
       <div class="container">
-        <input type="text" placeholder="Buscar peças de roupa...">
+        <input type="text" placeholder="Buscar">
       </div>
     </section>
+
     <section id="todas-as-categorias" class="secao_produtos">
       <div class="container">
         <h2>Categorias</h2>
         <div class="lista_itens">
           <div class="item_produto">
-            <img src="img/vestidofem.jpeg" alt="Feminino">
-            <p class="nome_produto">Feminino</p>
+            <img src="img/vestidofem.jpeg" alt="Feminino" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Feminino</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/BlusaMasc.jpeg" alt="Blusa_Masculina">
-            <p class="nome_produto">Blusa Masculina</p>
+            <img src="img/BlusaMasc.jpeg" alt="Blusa Masculina" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Blusa Masculina</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/VansMasc.jpeg" alt="Sapatos">
-            <p class="nome_produto">Sapatos</p>
+            <img src="img/VansMasc.jpeg" alt="Sapatos" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Sapatos</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/inverno.jpeg" alt="Inverno">
-            <p class="nome_produto">Inverno</p>
+            <img src="img/inverno.jpeg" alt="Inverno" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Inverno</p>
+            </div>
+          </div>
+           <div class="item_produto">
+            <img src="img/Veraotop.jpeg" alt="Verão" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Verão</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/Veraotop.jpeg" alt="Verao">
-            <p class="nome_produto">Verão</p>
-          </div>
-            <div class="item_produto">
-            <img src="img/infantil.jpeg" alt="infantil">
-            <p class="nome_produto">Infantil</p>
+            <img src="img/infantil.jpeg" alt="Infantil" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Infantil</p>
+            </div>
           </div>
         </div>
       </div>
@@ -65,20 +86,28 @@
         <h2>Mais procurados Inverno</h2>
         <div class="lista_itens">
           <div class="item_produto">
-            <img src="img/MoletomMarrom.jpeg" alt="Casaco Marrom P">
-            <p class="nome_produto">Casaco Marrom P</p>
+            <img src="img/MoletomMarrom.jpeg" alt="Casaco Marrom P" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Casaco Marrom P</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/Calcamole.jpeg" alt="Calça de moletom">
-            <p class="nome_produto">Calça de moletom</p>
+            <img src="img/Calcamole.jpeg" alt="Calça de moletom" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Calça de moletom</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/jaqwueta.jpeg" alt="Jaqueta de couro">
-            <p class="nome_produto">Jaqueta de couro</p>
+            <img src="img/jaqwueta.jpeg" alt="Jaqueta de couro" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Jaqueta de couro</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/JaquetaInverno.jpeg" alt="Casaco Inverno">
-            <p class="nome_produto">Casaco Inverno</p>
+            <img src="img/JaquetaInverno.jpeg" alt="Casaco Inverno" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Casaco Inverno</p>
+            </div>
           </div>
         </div>
       </div>
@@ -89,20 +118,28 @@
         <h2>Mais procurados Feminino</h2>
         <div class="lista_itens">
           <div class="item_produto">
-            <img src="img/vestido_verde.jpg" alt="Vestido Verde">
-            <p class="nome_produto">Vestido Verde</p>
+            <img src="img/vestidoverde.jpeg" alt="Vestido Verde" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Vestido Verde</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/blusa_branca.jpg" alt="Blusa Branca">
-            <p class="nome_produto">Blusa Branca</p>
+            <img src="img/blusabranca.jpeg" alt="Blusa Branca" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Blusa Branca</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/vestido_creme.jpg" alt="Vestido Creme">
-            <p class="nome_produto">Vestido Creme</p>
+            <img src="img/vestidocreme.jpeg" alt="Vestido Creme" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Vestido Creme</p>
+            </div>
           </div>
           <div class="item_produto">
-            <img src="img/tenis_allstar.jpg" alt="Tênis All Star">
-            <p class="nome_produto">Tênis All Star</p>
+            <img src="img/tenisallstart.jpeg" alt="Tênis All Star" class="imagem_produto_fundo">
+            <div class="info_produto">
+              <p class="nome_produto">Tênis All Star</p>
+            </div>
           </div>
         </div>
       </div>

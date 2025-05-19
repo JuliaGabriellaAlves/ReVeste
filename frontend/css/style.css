@@ -1,10 +1,11 @@
 /* Estilos gerais */
 body {
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif; /* Usando Lato como exemplo */
   margin: 0;
   padding: 0;
-  /* AJUSTE: Cor de fundo principal para branco, como na imagem */
-  background-color: #fff;
+  background-color: #f9f9f9; /* Um cinza muito claro para o fundo, quase branco */
+  color: #333;
+  line-height: 1.6;
 }
 
 .container {
@@ -15,10 +16,10 @@ body {
 
 /* Estilos do cabeçalho */
 .cabecalho {
-  /* AJUSTE: Tente um verde mais claro. Ex: #8BC34A ou use um seletor de cores para pegar da imagem */
-  background-color: #8BC34A; /* Exemplo de verde mais claro */
+  background-color: #6A8A65; /* Tom de verde mais sóbrio, similar à imagem */
   color: #fff;
-  padding: 15px 0;
+  padding: 12px 0; /* Um pouco menos de padding vertical */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cabecalho .container {
@@ -33,13 +34,14 @@ body {
 }
 
 .logo img {
-  height: 30px; /* Na imagem, o ícone do cabide parece um pouco maior, talvez 35-40px */
-  margin-right: 10px;
+  height: 38px; /* Ícone um pouco maior */
+  margin-right: 12px;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 24px; /* O tamanho da fonte "ReVeste" na imagem parece maior */
+  font-size: 28px; /* Nome da marca um pouco maior */
+  font-weight: 700;
 }
 
 .menu_principal ul {
@@ -51,7 +53,7 @@ body {
 }
 
 .menu_principal li {
-  margin-left: 20px;
+  margin-left: 25px; /* Mais espaçamento entre os itens */
 }
 
 .menu_principal li:first-child {
@@ -61,92 +63,123 @@ body {
 .menu_principal a {
   color: #fff;
   text-decoration: none;
-  /* A fonte dos links "Chat" e "Perfil" na imagem parece ser branca. Já está ok. */
+  font-size: 16px;
+  display: flex; /* Para alinhar texto e ícone no item "Joana" */
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
-.menu_principal a img {
-  height: 25px; /* Os ícones de coração e perfil parecem ter um bom tamanho */
+.menu_principal a:hover {
+  color: #e0e0e0; /* Leve feedback visual no hover */
+}
+
+.menu_principal a img { /* Ícones de coração */
+  height: 24px;
   vertical-align: middle;
+}
+
+.menu_usuario span {
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+.menu_usuario img { /* Ícone de perfil ao lado de "Joana" */
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #fff; /* Pequena borda no ícone de perfil */
 }
 
 /* Estilos da seção de busca */
 .secao_busca {
-  padding: 20px 0;
-  /* AJUSTE: Fundo da seção de busca para branco ou cinza muito claro */
-  background-color: #fff; /* ou um cinza como #f0f0f0 */
+  padding: 25px 0;
+  background-color: #fff; /* Fundo branco para a seção de busca */
+  border-bottom: 1px solid #eee; /* Linha sutil de separação */
 }
 
 .secao_busca .container input[type="text"] {
   width: 100%;
-  padding: 10px 15px; /* Aumentar um pouco o padding para altura */
-  border: 1px solid #e0e0e0; /* Borda cinza clara */
-  border-radius: 20px;      /* Mais arredondado como na imagem */
+  padding: 12px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px; /* Cantos bem arredondados */
   font-size: 16px;
   box-sizing: border-box;
-  /* AJUSTE: Cor de fundo do input */
-  background-color: #f0f0f0; /* Cinza claro para o input */
+  background-color: #f5f5f5; /* Fundo cinza bem claro para o input */
+  color: #555;
 }
 
 .secao_busca .container input[type="text"]::placeholder {
-  color: #888; /* Cor do placeholder */
+  color: #aaa;
 }
-
 
 /* Estilos das seções de produtos */
 .secao_produtos {
-  padding: 30px 0;
-  /* AJUSTE: Fundo das seções para branco */
-  background-color: #fff;
+  padding: 40px 0;
 }
 
 .secao_produtos h2 {
   color: #333;
-  margin-bottom: 20px;
-  text-align: left; /* Na imagem, os títulos "Mais procurados Inverno" etc., estão à esquerda */
-  font-size: 20px;  /* Ajuste o tamanho conforme a imagem */
+  margin-bottom: 25px;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .lista_itens {
-  display: flex;
-  flex-wrap: wrap; /* Mantém wrap se precisar de múltiplas linhas */
-  gap: 20px;
-  /* justify-content: center;  Na imagem, parece alinhado à esquerda ou com espaço entre os itens */
-  justify-content: space-between; /* Ou flex-start se quiser tudo junto à esquerda */
+  display: grid; /* Usando grid para mais controle */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsivo */
+  gap: 25px;
 }
 
 .item_produto {
-  background-color: #fff; /* O fundo do card em si */
-  border: 1px solid #ddd;
-  border-radius: 8px; /* Vamos ajustar isso depois para o efeito da imagem */
-  overflow: hidden; /* Importante para o arredondamento da imagem */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 200px; /* O tamanho parece bom, podemos ajustar se necessário */
-  position: relative; /* Necessário para posicionar o nome_produto absolutamente */
+  background-color: #fff;
+  border-radius: 10px; /* Cantos mais arredondados para o card */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.item_produto img {
+.item_produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.item_produto .imagem_produto_fundo {
   width: 100%;
-  height: auto; /* Ou uma altura fixa se todas as imagens tiverem proporções diferentes */
+  height: 220px; /* Altura fixa para as imagens dos produtos */
+  object-fit: cover; /* Garante que a imagem cubra sem distorcer */
   display: block;
-  /* Se for aplicar border-radius apenas na imagem e não no card:
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  */
+  border-radius: 10px 10px 0 0; /* Arredonda cantos superiores da imagem */
+}
+
+.item_produto .info_produto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(165, 214, 167, 0.85); /* Verde claro translúcido (Ajuste R,G,B,Alpha) */
+  padding: 10px 12px;
+  /* border-radius: 0 0 10px 10px; */ /* Removido para overlay retangular na base */
 }
 
 .item_produto .nome_produto {
-  /* Estes estilos serão drasticamente alterados para sobrepor a imagem */
-  padding: 10px;
+  color: #fff; /* Texto branco no overlay */
+  font-weight: 700; /* Nome do produto em negrito */
+  font-size: 15px;
   text-align: center;
-  color: #333;
-  font-weight: bold;
+  margin: 0;
+  white-space: nowrap; /* Evita quebra de linha se o nome for muito longo */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
 }
 
 /* Estilos do rodapé */
 .rodape {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+  background-color: #404040; /* Cinza escuro para o rodapé */
+  color: #ccc;
+  padding: 30px 0;
   text-align: center;
   font-size: 14px;
 }
