@@ -1,0 +1,205 @@
+/* Estilos para a página cadastro.html - ReVeste */
+
+body {
+    background-color: #f0f2f5; /* Um cinza bem claro para o fundo da página de cadastro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cabecalho .container-cabecalho {
+    max-width: 1200px; /* Mantém a largura consistente com outras páginas */
+}
+
+/* Estilos para a seção principal de cadastro */
+.main-cadastro {
+    flex-grow: 1; /* Ocupa o espaço restante verticalmente */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 40px 20px; /* Espaçamento interno para telas menores */
+    box-sizing: border-box;
+}
+
+.card-cadastro {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    padding: 40px;
+    max-width: 600px; /* Largura máxima do cartão */
+    width: 100%;
+    text-align: center; /* Centraliza títulos e subtítulos */
+}
+
+.titulo-cadastro {
+    font-size: 28px;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo-cadastro {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos de input */
+}
+
+.grupo-input-linha {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os inputs na mesma linha */
+}
+
+.input-container {
+    flex: 1; /* Faz com que os inputs ocupem espaço igual na linha */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha labels à esquerda */
+}
+
+.input-container.full-width {
+    width: 100%;
+}
+
+.input-container label {
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600; /* Mais negrito para o label */
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="tel"],
+.input-container input[type="password"] {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 25px; /* Cantos bem arredondados */
+    font-size: 15px;
+    color: #343a40;
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-container input::placeholder {
+    color: #adb5bd;
+}
+
+.input-container input:focus {
+    border-color: #6A8A65; /* Borda verde ao focar */
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25); /* Sombra suave ao focar */
+    outline: none; /* Remove outline padrão do navegador */
+}
+
+.input-prefixo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+.input-prefixo span {
+    padding: 12px 0 12px 18px;
+    color: #343a40;
+    font-size: 15px;
+    font-weight: 600;
+    border-right: 1px solid #ced4da;
+    margin-right: 10px;
+    height: 100%; /* Garante que o span tenha altura completa do prefixo */
+    display: flex;
+    align-items: center;
+}
+
+.input-prefixo input {
+    border: none; /* Remove borda do input dentro do prefixo */
+    background-color: transparent; /* Fundo transparente para o input */
+    padding: 12px 18px 12px 0; /* Ajusta padding */
+    border-radius: 0 25px 25px 0; /* Arredonda só a direita */
+    flex-grow: 1; /* Ocupa o restante do espaço */
+}
+
+.input-prefixo input:focus {
+    box-shadow: none; /* Remove a sombra do input interno ao focar, a sombra será no .input-prefixo */
+}
+
+/* Foco para o input-prefixo inteiro */
+.input-prefixo:focus-within {
+    border-color: #6A8A65;
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+}
+
+
+.titulo-senha {
+    font-size: 14px;
+    color: #495057;
+    font-weight: 600;
+    margin-top: 10px; /* Espaçamento acima do título da senha */
+    text-align: left; /* Alinha o título "Crie sua senha" à esquerda */
+}
+
+.botao-cadastro {
+    background-color: #6A8A65; /* Verde principal */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px; /* Cantos bem arredondados */
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 20px; /* Espaçamento acima do botão */
+    width: fit-content; /* Ajusta a largura ao conteúdo */
+    align-self: center; /* Centraliza o botão dentro do form flex-direction column */
+}
+
+.botao-cadastro:hover {
+    background-color: #587554; /* Verde mais escuro no hover */
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .card-cadastro {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .grupo-input-linha {
+        flex-direction: column; /* Em telas menores, inputs ficam em coluna */
+        gap: 15px;
+    }
+
+    .input-prefixo span {
+        padding: 10px 0 10px 15px;
+        margin-right: 8px;
+    }
+
+    .input-prefixo input {
+        padding: 10px 15px 10px 0;
+    }
+}
+
+/* Estilos do rodapé (consistente com style.css) */
+.rodape {
+    background-color: #404040;
+    color: #ccc;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto; /* Garante que o rodapé fique no final */
+}
+
+.rodape .container p {
+    margin: 0;
+}

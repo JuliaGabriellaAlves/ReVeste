@@ -1,0 +1,306 @@
+/* Estilos para a página favoritos.html - ReVeste */
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Cinza muito claro para o fundo geral da página */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Estilos do Cabeçalho (Consistente com outras páginas) --- */
+.cabecalho {
+    background-color: #6A8A65; /* Mesmo verde da index */
+    color: #fff;
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho .container-cabecalho { /* Usar um container para o cabeçalho */
+    max-width: 1200px; /* Consistente com a index */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 38px;
+    margin-right: 12px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu_principal li {
+    margin-left: 25px;
+}
+
+.menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_principal a:hover {
+    color: #e0e0e0;
+}
+
+.menu_principal a img { /* Ícone de coração */
+    height: 24px;
+    vertical-align: middle;
+}
+
+.menu_usuario span {
+    margin-right: 8px;
+    font-weight: 400;
+}
+
+.menu_usuario img { /* Ícone de perfil */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+/* --- Layout da Página de Favoritos (similar ao perfil.css) --- */
+.pagina-container {
+    display: flex;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 20px auto; /* Espaçamento acima/abaixo e centralizado */
+    width: 100%;
+    background-color: #fff; /* Fundo branco para a área do menu lateral e conteúdo */
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que os cantos arredondados sejam respeitados */
+}
+
+.menu-lateral {
+    width: 220px; /* Largura do menu lateral */
+    background-color: #f1f3f5; /* Cinza claro para o menu lateral */
+    padding: 25px 0; /* Padding vertical, sem padding horizontal nos itens */
+    border-right: 1px solid #e9ecef;
+    flex-shrink: 0; /* Impede que o menu encolha */
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-lateral li a {
+    display: block;
+    padding: 12px 25px; /* Padding para os itens do menu */
+    color: #495057; /* Cor do texto do menu */
+    text-decoration: none;
+    font-size: 16px;
+    border-left: 3px solid transparent; /* Para o indicador de item ativo */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-lateral li a:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+.menu-lateral li a.ativo {
+    background-color: #fff; /* Fundo do item ativo */
+    color: #6A8A65; /* Cor do texto do item ativo (verde principal) */
+    font-weight: 700;
+    border-left-color: #6A8A65; /* Borda verde no item ativo */
+}
+
+/* --- Conteúdo Principal de Favoritos --- */
+.secao_conteudo_favoritos {
+    flex-grow: 1;
+    padding: 30px 40px; /* Mais padding interno */
+}
+
+.titulo-favoritos {
+    font-size: 26px;
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* Estilos dos itens de produto favoritados (reutilizando e adaptando de style.css) */
+.lista_itens_favoritos {
+    display: grid;
+    /* Adaptação para 2 ou 3 colunas em telas maiores, e 1 em telas pequenas */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.item_produto_favorito {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    position: relative; /* Essencial para posicionar o overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item_produto_favorito:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.item_produto_favorito .imagem_produto_fundo {
+    width: 100%;
+    height: 220px; /* Altura fixa para as imagens dos produtos */
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.item_produto_favorito .info_produto {
+    position: absolute; /* Ajustado para ser absoluto em relação ao .item_produto_favorito */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(165, 214, 167, 0.85); /* Verde claro translúcido */
+    padding: 10px 12px;
+}
+
+.item_produto_favorito .nome_produto {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Estilos para o overlay "Vendido" */
+.item_produto_favorito.vendido .overlay-vendido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay semi-transparente escuro */
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Mesmo border-radius do card pai */
+    pointer-events: none; /* Permite clicar através do overlay se houver links por baixo */
+    z-index: 2; /* Garante que fique por cima do conteúdo do item */
+}
+
+/* Opcional: Efeito para diminuir o brilho da imagem quando vendido */
+.item_produto_favorito.vendido .imagem_produto_fundo {
+    filter: grayscale(100%) brightness(70%); /* Deixa a imagem em tons de cinza e um pouco mais escura */
+}
+
+
+/* --- Estilos do Rodapé (Consistente com style.css) --- */
+.rodape {
+    background-color: #404040; /* Mesmo cinza escuro da index */
+    color: #ccc;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto; /* Garante que o rodapé fique no final */
+}
+
+.rodape p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pagina-container {
+        flex-direction: column; /* Menu lateral em cima em telas pequenas */
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        padding: 15px 0;
+        border-radius: 0;
+    }
+
+    .menu-lateral ul {
+        display: flex;
+        justify-content: space-around; /* Distribui os itens no menu lateral */
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    }
+
+    .menu-lateral li {
+        margin: 5px 10px; /* Ajusta margem para itens no menu lateral flexível */
+    }
+
+    .menu-lateral li a {
+        padding: 8px 15px;
+        border-left: none; /* Remove borda lateral */
+        border-bottom: 3px solid transparent; /* Adiciona borda inferior para ativo */
+    }
+
+    .menu-lateral li a.ativo {
+        border-left-color: transparent;
+        border-bottom-color: #6A8A65; /* Borda inferior verde para ativo */
+    }
+
+    .secao_conteudo_favoritos {
+        padding: 20px;
+    }
+
+    .lista_itens_favoritos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Reduz o min-width dos itens */
+        gap: 15px;
+    }
+
+    .item_produto_favorito .imagem_produto_fundo {
+        height: 180px; /* Ajusta a altura da imagem em telas menores */
+    }
+
+    .item_produto_favorito .info_produto {
+        padding: 8px;
+    }
+
+    .item_produto_favorito .nome_produto {
+        font-size: 14px;
+    }
+
+    .item_produto_favorito.vendido .overlay-vendido {
+        font-size: 18px;
+    }
+}

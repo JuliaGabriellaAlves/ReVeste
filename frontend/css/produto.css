@@ -1,0 +1,289 @@
+/* Estilos para a página produto.html - ReVeste */
+
+body {
+    background-color: #f8f9fa; /* Fundo claro, consistente */
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Reutilizando estilos do cabeçalho e rodapé de style.css */
+.cabecalho .container, .rodape .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Layout da Página de Detalhes do Produto --- */
+.principal-produto {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 20px 0 40px; /* Padding vertical */
+}
+
+.principal-produto .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.breadcrumb ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb li a:hover {
+    color: #333;
+}
+
+.breadcrumb li + li::before {
+    content: "→"; /* Seta para separação */
+    margin: 0 8px;
+    color: #adb5bd;
+}
+
+.breadcrumb li span {
+    font-weight: 700;
+    color: #343a40;
+}
+
+/* Seção principal do produto (imagem + info) */
+.detalhes-produto {
+    display: flex;
+    gap: 40px; /* Espaçamento entre a imagem e as infos */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px; /* Espaçamento antes da próxima seção */
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.imagem-produto-grande {
+    flex: 1; /* Ocupa metade do espaço */
+    min-width: 300px; /* Largura mínima para a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5; /* Fundo cinza para a área da imagem */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.imagem-produto-grande img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.info-produto-detalhes {
+    flex: 1; /* Ocupa a outra metade do espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-produto-detalhes {
+    font-size: 32px;
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 15px; /* Espaçamento entre os botões */
+    margin-bottom: 30px;
+    /* Adicionado: Garante que o texto dos botões não quebre inesperadamente se forem longos */
+    /* e que se alinhem corretamente */
+    align-items: center; 
+    justify-content: center; /* Centraliza os botões se houver espaço extra */
+}
+
+.botao-solicitar,
+.botao-chat {
+    flex: 1; /* Faz os botões ocuparem espaço igual */
+    padding: 14px 15px; /* Ajustado um pouco o padding horizontal para acomodar texto mais longo */
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-align: center; /* Garante que o texto dentro do botão esteja centralizado */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas, a menos que a tela seja muito pequena */
+    text-decoration: none; /* Importante para o <a> que agora é um botão */
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura */
+    display: flex; /* Para centralizar o texto verticalmente, se necessário */
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-solicitar {
+    background-color: #6A8A65; /* Verde principal */
+    color: white;
+}
+
+.botao-solicitar:hover {
+    background-color: #587554;
+    transform: translateY(-2px);
+}
+
+.botao-chat {
+    background-color: #A5D6A7; /* Verde claro */
+    color: #343a40; /* Texto mais escuro */
+    border: 1px solid #90C392; /* Borda sutil */
+}
+
+.botao-chat:hover {
+    background-color: #90C392;
+    transform: translateY(-2px);
+}
+
+.lista-detalhes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.8;
+}
+
+.lista-detalhes li::before {
+    content: "•"; /* Bullet point */
+    color: #6A8A65; /* Verde para o bullet */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* --- Seção de Outras Roupas (Produtos Relacionados) --- */
+.secao_outras_roupas {
+    padding: 0; /* O container já tem padding */
+}
+
+.secao_outras_roupas h2 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Reutilizando estilos de grid e cards de style.css */
+/* Garanta que as classes .lista_itens e .item_produto já estejam bem definidas em style.css */
+/* Se houver conflito, use .secao_outras_roupas .lista_itens etc. para especificidade */
+/* Se precisar de estilos ligeiramente diferentes, duplique e ajuste com novas classes ou especificidade */
+.secao_outras_roupas .lista_itens {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.secao_outras_roupas .item_produto {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secao_outras_roupas .item_produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.secao_outras_roupas .item_produto .imagem_produto_fundo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.secao_outras_roupas .item_produto .info_produto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(165, 214, 167, 0.85);
+    padding: 10px 12px;
+}
+
+.secao_outras_roupas .item_produto .nome_produto {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .detalhes-produto {
+        flex-direction: column; /* Em telas menores, imagem e info ficam em coluna */
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .imagem-produto-grande {
+        min-width: unset; /* Remove min-width */
+        width: 100%;
+    }
+
+    .titulo-produto-detalhes {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .botoes-acao {
+        flex-direction: column; /* Botões um abaixo do outro */
+        gap: 10px;
+    }
+
+    .botao-solicitar,
+    .botao-chat {
+        padding: 12px 20px;
+        font-size: 15px; /* Ajuste para o texto mais longo em telas menores */
+    }
+
+    .lista-detalhes {
+        font-size: 15px;
+    }
+
+    .secao_outras_roupas .lista_itens {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajuste para telas menores */
+        gap: 15px;
+    }
+}
