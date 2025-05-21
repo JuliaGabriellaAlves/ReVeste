@@ -1,0 +1,160 @@
+/* Estilos específicos para a página login.html - ReVeste */
+
+body {
+    background-color: #f0f2f5; /* Um cinza bem claro para o fundo da página de login */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+/* Reutilizando estilos do cabeçalho e rodapé de style.css */
+/* Não há necessidade de redefinir cabecalho ou rodape inteiros aqui */
+/* se style.css já os define globalmente. Apenas se houver alguma particularidade. */
+/* Garantir que .cabecalho .container e .rodape .container tenham max-width */
+/* no style.css para consistência. */
+
+
+/* Estilos para a seção principal de login */
+.main-login {
+    flex-grow: 1; /* Ocupa o espaço restante verticalmente */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 40px 20px; /* Espaçamento interno para telas menores */
+    box-sizing: border-box;
+}
+
+.card-login {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    padding: 40px;
+    max-width: 450px; /* Largura máxima do cartão de login (um pouco menor que o de cadastro) */
+    width: 100%;
+    text-align: center; /* Centraliza títulos e subtítulos */
+}
+
+.titulo-login {
+    font-size: 28px;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo-login {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos de input */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha labels à esquerda */
+    width: 100%; /* Garante que o container do input ocupe toda a largura disponível */
+}
+
+.input-container label {
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-container input[type="email"],
+.input-container input[type="password"] {
+    width: 100%; /* GARANTIDO: Ocupa 100% da largura do pai */
+    padding: 12px 18px; /* Padding interno. */
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* AJUSTE: Arredondamento suave e retangular */
+    font-size: 15px;
+    color: #343a40;
+    background-color: #f8f9fa;
+    box-sizing: border-box; /* ESSENCIAL: Padding e borda incluídos na largura total */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-container input::placeholder {
+    color: #adb5bd;
+}
+
+.input-container input:focus {
+    border-color: #6A8A65; /* Borda verde ao focar */
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+    outline: none;
+}
+
+.botao-login {
+    background-color: #6A8A65; /* Verde principal */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: fit-content;
+    align-self: center; /* Centraliza o botão */
+}
+
+.botao-login:hover {
+    background-color: #587554;
+    transform: translateY(-2px);
+}
+
+.links-adicionais {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+}
+
+.links-adicionais a {
+    color: #6A8A65; /* Cor do link (verde) */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.links-adicionais a:hover {
+    color: #587554; /* Cor mais escura no hover */
+    text-decoration: underline;
+}
+
+.links-adicionais .separador {
+    margin: 0 8px;
+    color: #adb5bd;
+}
+
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .card-login {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .titulo-login {
+        font-size: 24px;
+    }
+
+    .subtitulo-login {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    .botao-login {
+        width: 100%;
+    }
+}
