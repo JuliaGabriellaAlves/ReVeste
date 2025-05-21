@@ -1,5 +1,4 @@
 /* Estilos para a página perfil.html - ReVeste */
-
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -13,7 +12,7 @@ body {
 
 /* --- Estilos do Cabeçalho (Consistente com style.css) --- */
 .cabecalho {
-    background-color: #6A8A65; /* Mesmo verde da index */
+    background-color: #6A8A65; /* Mesmo verde da index, corresponde ao verde da imagem #657d61 (aproximado) */
     color: #fff;
     padding: 12px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,21 +28,31 @@ body {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+    display: flex; /* Garante que os itens dentro do logo (imagem e h1) fiquem lado a lado */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    /* Removendo margin-right se existir, pois já é tratado pelo 'gap' ou 'margin-right' da imagem */
 }
 
 .logo img {
     height: 38px;
-    margin-right: 12px;
+    margin-right: 12px; /* Adiciona um espaço entre o ícone e o texto "ReVeste" */
 }
 
 .logo h1 {
-    margin: 0;
+    margin: 0; /* Remove margens padrão do h1 para melhor controle de espaçamento */
     font-size: 28px;
     font-weight: 700;
     color: #fff;
 }
+
+/* Regra para remover o sublinhado do link do logo */
+.logo a {
+    text-decoration: none; /* Remove a linha debaixo do texto "ReVeste" */
+    color: inherit; /* Garante que a cor do texto seja herdada do pai (branco do cabeçalho) */
+    display: flex; /* Adicionado para garantir que o ícone e o H1 dentro do link fiquem lado a lado, se houver um comportamento inesperado */
+    align-items: center; /* Alinha verticalmente os itens dentro do link */
+}
+
 
 .menu_principal ul {
     list-style: none;
@@ -70,7 +79,7 @@ body {
     color: #e0e0e0;
 }
 
-.menu_principal a img { /* Ícone de coração */
+.menu_principal a img { /* Ícone de coração e outros ícones do menu principal */
     height: 24px;
     vertical-align: middle;
 }
@@ -87,7 +96,6 @@ body {
     object-fit: cover;
     border: 1px solid #fff;
 }
-
 /* --- Layout da Página de Perfil --- */
 .pagina-container {
     display: flex;

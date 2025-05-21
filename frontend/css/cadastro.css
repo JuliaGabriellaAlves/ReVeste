@@ -7,9 +7,92 @@ body {
     min-height: 100vh;
 }
 
+/* Reafirmando estilos do cabeçalho para garantir consistência (geralmente estariam no style.css) */
+.cabecalho {
+    background-color: #6A8A65;
+    color: #fff;
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex-shrink: 0;
+}
+
 .cabecalho .container-cabecalho {
     max-width: 1200px; /* Mantém a largura consistente com outras páginas */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo a { /* Para links envolvendo a logo */
+    text-decoration: none !important; /* Força a remoção do sublinhado */
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 38px;
+    margin-right: 12px;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Garante que os itens do menu fiquem lado a lado */
+    align-items: center;
+    gap: 25px; /* Adiciona espaçamento entre os itens do menu */
+}
+
+.menu_principal li:first-child {
+    margin-left: 0;
+}
+
+.menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_principal a:hover,
+.menu_principal a.ativo {
+    color: #e0e0e0;
+    font-weight: 700;
+}
+
+.menu_principal a img {
+    height: 24px;
+    vertical-align: middle;
+}
+
+.menu_usuario span {
+    margin-right: 8px;
+    font-weight: 400;
+}
+
+.menu_usuario img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
 
 /* Estilos para a seção principal de cadastro */
 .main-cadastro {
@@ -76,8 +159,7 @@ body {
 
 .input-container input[type="text"],
 .input-container input[type="email"],
-.input-container input[type="tel"],
-.input-container input[type="password"] {
+.input-container input[type="password"] { /* Removi input[type="tel"] daqui para estilizar ele separadamente */
     width: 100%;
     padding: 12px 18px;
     border: 1px solid #ced4da;
@@ -99,38 +181,51 @@ body {
     outline: none; /* Remove outline padrão do navegador */
 }
 
+/* Estilos para o campo de telefone com prefixo */
 .input-prefixo {
     display: flex;
     align-items: center;
     width: 100%;
-    border: 1px solid #ced4da;
-    border-radius: 25px;
+    border: 1px solid #ced4da; /* Borda externa do campo inteiro */
+    border-radius: 25px; /* Arredondamento do container todo */
     background-color: #f8f9fa;
     box-sizing: border-box;
+    /* Remover overflow: hidden; se estiver causando problemas de renderização */
+    /* overflow: hidden; */
 }
-
 .input-prefixo span {
-    padding: 12px 0 12px 18px;
+    /* Ajuste aqui o padding-right para criar o espaço */
+    padding: 12px 10px 12px 18px; /* Ajustei o padding-right de 0 para 10px */
     color: #343a40;
     font-size: 15px;
     font-weight: 600;
-    border-right: 1px solid #ced4da;
-    margin-right: 10px;
-    height: 100%; /* Garante que o span tenha altura completa do prefixo */
+    border-right: 1px solid #ced4da; /* A linha divisória vertical */
+    margin-right: 0; 
+    align-self: stretch;
     display: flex;
-    align-items: center;
+    align-items: center; 
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.input-prefixo input {
-    border: none; /* Remove borda do input dentro do prefixo */
+.input-prefixo input[type="tel"] { /* SELETOR ESPECÍFICO PARA O INPUT DE TELEFONE */
+    border: none; /* ESSENCIAL: O input interno não deve ter sua própria borda */
     background-color: transparent; /* Fundo transparente para o input */
-    padding: 12px 18px 12px 0; /* Ajusta padding */
-    border-radius: 0 25px 25px 0; /* Arredonda só a direita */
-    flex-grow: 1; /* Ocupa o restante do espaço */
+    padding: 12px 18px 12px 10px; /* Ajuste o padding-left aqui se precisar de mais espaço após o +55 */
+    border-radius: 0 25px 25px 0; /* ARREDONDA APENAS OS CANTOS DIREITOS */
+    flex-grow: 1; /* Faz o input ocupar o restante do espaço */
+    outline: none; /* Remover outline padrão que pode ser chato no input interno */
+    
+    /* Tentativas extras para garantir que não haja arredondamento indesejado à esquerda */
+    -webkit-appearance: none; /* Para remover estilos nativos em Webkit (Chrome, Safari) */
+    -moz-appearance: none; /* Para remover estilos nativos em Firefox */
+    appearance: none; /* Para remover estilos nativos em navegadores modernos */
 }
 
-.input-prefixo input:focus {
-    box-shadow: none; /* Remove a sombra do input interno ao focar, a sombra será no .input-prefixo */
+.input-prefixo input[type="tel"]:focus {
+    box-shadow: none; /* Remove a sombra do input interno ao focar */
 }
 
 /* Foco para o input-prefixo inteiro */
@@ -185,7 +280,7 @@ body {
         margin-right: 8px;
     }
 
-    .input-prefixo input {
+    .input-prefixo input[type="tel"] { /* Adicionado type="tel" aqui também para responsividade */
         padding: 10px 15px 10px 0;
     }
 }

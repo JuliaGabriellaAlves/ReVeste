@@ -10,13 +10,48 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/* Reutilizando estilos do cabeçalho e rodapé de style.css */
-.cabecalho .container, .rodape .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* --- Estilos do Cabeçalho (PARA COLOCAR NO style.css) --- */
+.cabecalho {
+    background-color: #6A8A65; /* Verde do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+    padding: 12px 0; /* Espaçamento interno superior e inferior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave na parte inferior */
+    width: 100%; /* Ocupa a largura total */
 }
+
+.cabecalho .container { /* Certifique-se de que o container do cabeçalho está usando esta classe */
+    max-width: 1200px; /* Largura máxima do conteúdo dentro do cabeçalho */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaçamento interno lateral */
+    display: flex; /* Habilita Flexbox para alinhar itens em linha */
+    justify-content: space-between; /* Espaça o logo e o menu principal nas extremidades */
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+}
+
+.logo {
+    display: flex; /* Habilita Flexbox para alinhar a imagem e o H1 do logo lado a lado */
+    align-items: center; /* Alinha verticalmente a imagem e o H1 ao centro */
+}
+
+.logo a { /* Estilo para o link que envolve o logo (imagem e H1) */
+    text-decoration: none; /* ESSENCIAL: REMOVE O SUBLINHADO AZUL/ROXO DO LINK */
+    color: inherit; /* Garante que a cor do texto (ReVeste) seja herdada do pai (branco do cabeçalho) */
+    display: flex; /* Essencial para que os elementos dentro do link (img e h1) também fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente itens dentro do link */
+}
+
+.logo img {
+    height: 38px; /* Tamanho do ícone do cabide */
+    margin-right: 12px; /* Espaço entre o ícone do cabide e o texto "ReVeste" */
+}
+
+.logo h1 {
+    margin: 0; /* Remove margens padrão do H1 */
+    font-size: 28px; /* Tamanho da fonte do "ReVeste" */
+    font-weight: 700; /* Negrito para o "ReVeste" */
+    color: #fff; /* Cor branca para o texto "ReVeste" */
+}
+
 
 /* --- Layout da Página de Detalhes do Produto --- */
 .principal-produto {

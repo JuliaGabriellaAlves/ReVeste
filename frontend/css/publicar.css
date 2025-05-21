@@ -1,0 +1,308 @@
+/* Estilos específicos para a página Publicar Item (publicar.css) */
+/* --- Estilos do Cabeçalho (PARA COLOCAR NO style.css e SER GLOBAL) --- */
+.cabecalho {
+    background-color: #6A8A65; /* Verde do cabeçalho */
+    color: #fff; /* Cor padrão do texto no cabeçalho */
+    padding: 12px 0; /* Espaçamento interno superior e inferior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 100%; /* Ocupa a largura total */
+    flex-shrink: 0; /* Impede que o cabeçalho encolha em layouts flex */
+}
+
+.cabecalho .container { /* Contêiner interno para limitar largura e centralizar */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza */
+    padding: 0 20px; /* Espaçamento lateral */
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Espaça logo e menu para as extremidades */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+}
+
+.logo {
+    display: flex; /* Habilita Flexbox para alinhar ícone e H1 */
+    align-items: center; /* Alinha ícone e H1 verticalmente */
+    /* Garante que o link do logo não tenha estilos indesejados de texto */
+}
+
+.logo a { /* Regra específica para o link dentro do logo */
+    text-decoration: none !important; /* REMOVE O SUBLINHADO AZUL/ROXO FORÇADAMENTE (usando !important) */
+    color: inherit; /* Garante que a cor do texto seja herdada do elemento pai (cabeçalho, que é branco) */
+    display: flex; /* Essencial para que a imagem e o H1 dentro do link fiquem lado a lado */
+    align-items: center; /* Alinha verticalmente os elementos dentro do link */
+}
+
+.logo img {
+    height: 38px; /* Tamanho do ícone do cabide */
+    margin-right: 12px; /* Espaço entre o ícone e o texto */
+}
+
+.logo h1 {
+    margin: 0; /* Remove margens padrão do H1 */
+    font-size: 28px; /* Tamanho da fonte do "ReVeste" */
+    font-weight: 700; /* Negrito */
+    color: #fff; /* Cor branca para o texto "ReVeste" */
+}
+
+.menu_principal ul {
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Habilita Flexbox para os itens do menu */
+    align-items: center; /* Alinha itens verticalmente */
+}
+
+.menu_principal li {
+    margin-left: 25px; /* Espaçamento entre os itens do menu */
+}
+
+.menu_principal a {
+    color: #fff; /* Cor dos links do menu */
+    text-decoration: none; /* Remove sublinhado dos links do menu */
+    font-size: 16px;
+    display: flex; /* Habilita Flexbox para alinhar ícone e texto (ex: Joana + foto) */
+    align-items: center;
+    transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+.menu_principal a:hover,
+.menu_principal a.ativo { /* Estilo para link ativo ou hover */
+    color: #e0e0e0; /* Cor mais clara no hover/ativo */
+    font-weight: 700; /* Negrito no ativo */
+}
+
+.menu_principal a img { /* Estilo para ícones no menu (coração) */
+    height: 24px;
+    vertical-align: middle;
+}
+
+.menu_usuario span {
+    margin-right: 8px; /* Espaço entre o nome e a foto de perfil */
+    font-weight: 400;
+}
+
+.menu_usuario img { /* Estilo para a foto de perfil */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; /* Círculo */
+    object-fit: cover;
+    border: 1px solid #fff; /* Borda branca na foto */
+}
+
+
+/* Layout principal do formulário */
+.main-publicar {
+    padding: 40px 0; /* Espaçamento superior e inferior para a seção principal */
+    background-color: #f8f9fa; /* Fundo claro, consistente com as outras páginas */
+    flex-grow: 1; /* Faz o main ocupar o espaço restante na altura */
+}
+
+.container-publicar {
+    max-width: 800px; /* Largura máxima para o formulário, para não ficar muito esticado */
+    margin: 0 auto; /* Centraliza o contêiner */
+    background-color: #fff; /* Fundo branco para o card do formulário */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave e evidente */
+}
+
+.titulo-pagina {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo-pagina {
+    font-size: 16px;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Estilos do Formulário */
+.form-publicar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos de formulário */
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo label {
+    font-size: 15px;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="file"],
+.form-grupo textarea,
+.form-grupo select {
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    font-size: 16px;
+    color: #495057;
+    background-color: #fdfdfd; /* Fundo quase branco para inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; /* Ocupa a largura total do grupo */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.form-grupo input[type="file"] {
+    padding: 10px 15px; /* Ajuste para inputs de arquivo */
+}
+
+.form-grupo textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 100px;
+}
+
+.form-grupo input[type="text"]:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+    border-color: #88B085; /* Borda verde suave ao focar */
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25); /* Sombra suave ao focar */
+    outline: none; /* Remove a borda de foco padrão do navegador */
+}
+
+.form-grupo small {
+    font-size: 13px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+/* Estilos para grupos de campos em linha */
+.form-grupo-linha {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os campos na mesma linha */
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.form-grupo-linha .form-grupo {
+    flex: 1; /* Faz os campos dividirem o espaço igualmente */
+    min-width: 280px; /* Largura mínima para evitar que fiquem muito apertados */
+}
+
+/* Botão de Publicar */
+.botao-publicar {
+    background-color: #6A8A65; /* Verde principal do ReVeste */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; /* Botão bem arredondado */
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 20px; /* Espaçamento acima do botão */
+    align-self: center; /* Centraliza o botão no contêiner flex */
+    width: fit-content; /* Largura ajustada ao conteúdo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+}
+
+.botao-publicar:hover {
+    background-color: #587554; /* Verde mais escuro no hover */
+    transform: translateY(-3px); /* Pequena elevação no hover */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .container-publicar {
+        padding: 30px 20px; /* Ajusta o padding em telas menores */
+    }
+
+    .titulo-pagina {
+        font-size: 28px;
+    }
+
+    .subtitulo-pagina {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .form-grupo-linha {
+        flex-direction: column; /* Em telas muito pequenas, campos em linha viram coluna */
+        gap: 15px;
+    }
+
+    .form-grupo-linha .form-grupo {
+        min-width: unset; /* Remove a largura mínima para ocupar 100% */
+        width: 100%;
+    }
+
+    .botao-publicar {
+        width: 100%; /* Botão ocupa a largura total em telas menores */
+        font-size: 17px;
+    }
+}
+
+
+/* Estilos para o campo de upload de arquivo customizado */
+.custom-file-input {
+    display: flex; /* Para alinhar o botão e o texto lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    padding: 5px; /* Padding interno para a área toda */
+    box-sizing: border-box;
+    width: 100%; /* Ocupa a largura total do grupo */
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+}
+
+/* Esconde o input file nativo, mas o mantém acessível */
+.custom-file-input input[type="file"] {
+    position: absolute; /* Posição absoluta para tirá-lo do fluxo normal */
+    left: -9999px; /* Manda ele para bem longe da tela */
+    /* opacity: 0; /* Alternativa: torna invisível, mas mantem na posição */
+    /* width: 0.1px; height: 0.1px; */
+    /* overflow: hidden; */
+    /* z-index: -1; */
+}
+
+.custom-file-button {
+    background-color: #6A8A65; /* Cor do botão, similar ao seu design */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px; /* Cantos arredondados para o botão */
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Impede que o botão encolha */
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+    margin-right: 10px; /* Espaço entre o botão e o texto do arquivo */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.custom-file-button:hover {
+    background-color: #587554; /* Cor mais escura no hover */
+}
+
+.file-names-display {
+    flex-grow: 1; /* Ocupa o restante do espaço disponível */
+    color: #495057;
+    font-size: 16px;
+    white-space: nowrap; /* Impede que o texto quebre */
+    overflow: hidden; /* Esconde o texto que excede a largura */
+    text-overflow: ellipsis; /* Adiciona "..." ao final do texto longo */
+}
+
+/* Garante que o contêiner do input customizado também receba o estilo de foco */
+.form-grupo input[type="file"]:focus + .custom-file-button {
+    border-color: #88B085; /* Borda verde suave ao focar */
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25); /* Sombra suave ao focar */
+    outline: none; /* Remove a borda de foco padrão do navegador */
+}
+/* Ou, se preferir o foco na área total: */
+.custom-file-input:focus-within { /* Aplica estilo quando um elemento dentro dele está focado */
+    border-color: #88B085;
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+    outline: none;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Item - ReVeste</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/publicar.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/image (16).png" alt="Ícone de cabide">
+                    <h1>ReVeste</h1>
+                </a>
+            </div>
+            <nav class="menu_principal">
+                <ul>
+                    <li><a href="favoritos.html" aria-label="Favoritos"><img src="img/coracao.png" alt="Ícone de coração"></a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="publicar.html">Publicar Item</a></li> <li>
+                        <a href="perfil.html" class="menu_usuario">
+                            <span>Joana</span>
+                            <img src="img/fotoperfil.jpeg" alt="Foto de Joana">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-publicar">
+        <div class="container-publicar">
+            <h2 class="titulo-pagina">Publicar um Item</h2>
+            <p class="subtitulo-pagina">Preencha os detalhes da sua roupa para doação.</p>
+
+            <form class="form-publicar" action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-grupo">
+                    <label for="titulo">Título do Anúncio:</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ex: Vestido de Verão Florido" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="fotos">Fotos do Produto (até 5):</label>
+                    <div class="custom-file-input">
+                        <input type="file" id="fotos" name="fotos[]" accept="image/*" multiple required>
+                        <label for="fotos" class="custom-file-button">Escolher Arquivos</label>
+                        <span id="file-names" class="file-names-display">Nenhum arquivo escolhido</span>
+                    </div>
+                    <small>Selecione imagens claras do seu item.</small>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva a roupa, condição, material, etc." required></textarea>
+                </div>
+
+                <div class="form-grupo-linha">
+                    <div class="form-grupo">
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Selecione a Categoria</option>
+                            <option value="camisetas">Camisetas</option>
+                            <option value="calcas">Calças</option>
+                            <option value="vestidos">Vestidos</option>
+                            <option value="saias">Saias</option>
+                            <option value="blusas">Blusas</option>
+                            <option value="casacos">Casacos</option>
+                            <option value="acessorios">Acessórios</option>
+                            <option value="calcados">Calçados</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="genero">Gênero:</label>
+                        <select id="genero" name="genero" required>
+                            <option value="">Selecione o Gênero</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="unissex">Unissex</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grupo-linha">
+                    <div class="form-grupo">
+                        <label for="tamanho">Tamanho:</label>
+                        <select id="tamanho" name="tamanho" required>
+                            <option value="">Selecione o Tamanho</option>
+                            <option value="pp">PP</option>
+                            <option value="p">P</option>
+                            <option value="m">M</option>
+                            <option value="g">G</option>
+                            <option value="gg">GG</option>
+                            <option value="xg">XG</option>
+                            <option value="unico">Único</option>
+                            <option value="34">34</option>
+                            <option value="36">36</option>
+                            <option value="38">38</option>
+                            <option value="40">40</option>
+                            <option value="42">42</option>
+                            <option value="44">44</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="condicao">Condição:</label>
+                        <select id="condicao" name="condicao" required>
+                            <option value="">Selecione a Condição</option>
+                            <option value="novo-etiqueta">Novo com Etiqueta</option>
+                            <option value="usado-perfeito">Usado - Perfeito Estado</option>
+                            <option value="usado-bom">Usado - Bom Estado</option>
+                            <option value="usado-detalhes">Usado - Com Pequenos Detalhes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="localizacao">Localização para Retirada (Cidade/Estado):</label>
+                    <input type="text" id="localizacao" name="localizacao" placeholder="Ex: Florianópolis/SC" required>
+                </div>
+                
+                <button type="submit" class="botao-publicar">Publicar Item</button>
+            </form>
+        </div>
+    </main>
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2025 ReVeste - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/publicar.js"></script>
+</body>
+</html>

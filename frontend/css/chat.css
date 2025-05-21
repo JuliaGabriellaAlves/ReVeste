@@ -165,13 +165,16 @@ body {
     transition: background-color 0.2s ease;
 }
 
+/* ESTILOS PARA O EFEITO CINZA NO HOVER E NO ITEM ATIVO */
 .conversa-item:hover {
-    background-color: #e9ecef;
+    background-color: #e9ecef; /* Define o fundo cinza claro ao passar o mouse */
 }
 
 .conversa-item.ativo {
-    background-color: #e9ecef; /* Fundo destacado para conversa ativa */
+    background-color: #e9ecef; /* Define o fundo cinza claro para o item que tem a classe 'ativo' (ou seja, o item selecionado) */
 }
+/* FIM DOS ESTILOS PARA O EFEITO CINZA */
+
 
 .conversa-imagem-produto {
     width: 50px;
@@ -239,26 +242,16 @@ body {
     padding-bottom: 20px;
 }
 
-.logo-chat-grande-container {
+.logo-grande-container { /* Renomeado: Agora é o contêiner geral para o logo grande */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.logo-chat-circulo {
-    width: 120px;
-    height: 120px;
-    background-color: #6A8A65; /* Verde principal */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.logo-chat-circulo img {
-    height: 60px; /* Ajuste o tamanho do cabide interno */
-    filter: brightness(0) invert(1); /* Deixa o cabide branco */
+.logo-centralizado-grande { /* Nova classe para a imagem do logo grande */
+    width: 120px; /* Largura da imagem, similar ao tamanho do círculo anterior */
+    height: auto; /* Altura automática para manter a proporção da imagem */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
 }
 
 .logo-chat-texto-grande {
@@ -266,7 +259,6 @@ body {
     font-weight: 700;
     color: #6A8A65; /* Verde principal */
     margin: 0 0 10px 0;
-    /* Poderia usar uma fonte mais estilizada aqui se quisesse */
 }
 
 .logo-chat-subtexto {
