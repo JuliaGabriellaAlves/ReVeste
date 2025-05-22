@@ -1,0 +1,468 @@
+/* Estilos para a página conversa.html - ReVeste */ /* NOME DO ARQUIVO CORRIGIDO */
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Para o título externo ficar acima do cabeçalho */
+    min-height: 100vh;
+}
+
+.pagina-chat-container { /* Mantenho o nome da classe para não quebrar o layout existente */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupar toda a altura da viewport */
+    width: 100%;
+    max-width: 1400px; /* Um pouco mais largo para acomodar o chat */
+    margin: 0 auto; /* Centraliza se a tela for maior que max-width */
+    box-shadow: 0 0 20px rgba(0,0,0,0.08); /* Sombra sutil no container geral */
+}
+
+.chat-titulo-externo {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff; /* Fundo branco para o título externo */
+    border-bottom: 1px solid #e9ecef;
+    text-align: left;
+    width: calc(100% - 40px); /* Ajusta para padding */
+    max-width: 1360px; /* max-width do container - padding */
+    margin: 0 auto; /* Centraliza */
+}
+
+/* --- Estilos do Cabeçalho (Consistente com outras páginas) --- */
+.cabecalho {
+    background-color: #6A8A65;
+    color: #fff;
+    padding: 12px 0;
+    width: 100%;
+    flex-shrink: 0; /* Não encolher o cabeçalho */
+}
+
+.cabecalho .container-cabecalho {
+    max-width: 1360px; /* Consistente com o título externo e chat-corpo */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove sublinhado do link da logo */
+}
+.logo a { /* Para links envolvendo a logo */
+    text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
+    display: flex;
+    align-items: center;
+}
+
+
+.logo img {
+    height: 38px;
+    margin-right: 12px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu_principal li {
+    margin-left: 25px;
+}
+
+.menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_principal a:hover,
+.menu_principal a.ativo { /* Estilo para link ativo no menu */
+    color: #e0e0e0; /* Um pouco mais claro ou diferente */
+    font-weight: 700; /* Destaca o item ativo */
+}
+
+
+.menu_principal a img { /* Ícone de coração */
+    height: 24px;
+    vertical-align: middle;
+}
+
+.menu_usuario span {
+    margin-right: 8px;
+    font-weight: 400;
+}
+
+.menu_usuario img { /* Ícone de perfil */
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+/* --- Layout Principal do Chat (Mantendo nomes de classe para consistência) --- */
+.chat-corpo {
+    display: flex;
+    flex-grow: 1; /* Ocupa o restante da altura */
+    background-color: #fff;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias no corpo */
+}
+
+/* Coluna da Esquerda: Lista de Conversas */
+.lista-conversas {
+    width: 320px; /* Largura da lista de conversas */
+    border-right: 1px solid #e9ecef;
+    background-color: #f8f9fa; /* Fundo levemente diferente para a lista */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto; /* Rolagem se houver muitas conversas */
+}
+
+.lista-conversas h2 {
+    font-size: 20px;
+    color: #343a40;
+    padding: 20px 20px 15px 20px;
+    margin: 0;
+    font-weight: 700;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.conversas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.conversa-item {
+    display: flex;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* ESTILOS PARA O EFEITO CINZA NO HOVER E NO ITEM ATIVO */
+.conversa-item:hover {
+    background-color: #e9ecef; /* Define o fundo cinza claro ao passar o mouse */
+}
+
+.conversa-item.ativo {
+    background-color: #e9ecef; /* Define o fundo cinza claro para o item que tem a classe 'ativo' (ou seja, o item selecionado) */
+}
+/* FIM DOS ESTILOS PARA O EFEITO CINZA */
+
+
+.conversa-imagem-produto {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.conversa-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Para o text-overflow funcionar */
+}
+
+.conversa-contato-tempo {
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 2px;
+}
+
+.conversa-produto-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conversa-preview {
+    font-size: 14px;
+    color: #495057;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Coluna da Direita: Área de Chat Ativa / Boas-vindas ou Conversa */
+.area-chat-ativa {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* removemos justify-content e align-items center daqui para o chat-conversa-ativa */
+    padding: 0; /* Remove padding extra para o chat-conversa-ativa preencher */
+    background-color: #fff; /* Fundo branco para a área de chat */
+    text-align: center; /* Manter se o chat-boas-vindas for centralizado */
+}
+
+/* Estilos para a tela de boas-vindas quando não há conversa ativa */
+.chat-boas-vindas {
+    max-width: 500px;
+    margin: auto; /* Centraliza o conteúdo de boas-vindas */
+    display: flex; /* Para centralizar o conteúdo verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Para centralizar em relação à altura disponível */
+    padding: 40px; /* Adicionado padding para o conteúdo das boas-vindas */
+    box-sizing: border-box;
+}
+
+.texto-boas-vindas {
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+}
+
+.logo-grande-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-centralizado-grande {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.logo-chat-texto-grande {
+    font-size: 48px;
+    font-weight: 700;
+    color: #6A8A65;
+    margin: 0 0 10px 0;
+}
+
+.logo-chat-subtexto {
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* --- Estilos para a Conversa Ativa --- */
+.chat-conversa-ativa {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa a altura total da area-chat-ativa */
+    width: 100%; /* Ocupa a largura total da area-chat-ativa */
+    background-color: #fff;
+    box-sizing: border-box; /* Inclui padding na altura/largura */
+}
+
+/* Cabeçalho da Conversa (topo da coluna direita) */
+.chat-header {
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    padding: 15px 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Não encolhe */
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a imagem e o texto */
+}
+
+.chat-header-img-produto {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px; /* Cantos arredondados para a imagem do produto */
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.chat-header-nome-contato {
+    font-size: 16px;
+    font-weight: 700;
+    color: #343a40;
+    display: block; /* Para o p ficar abaixo */
+    margin-bottom: 2px;
+}
+
+.chat-header-nome-produto {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Área de Mensagens */
+.chat-mensagens {
+    flex-grow: 1; /* Ocupa o espaço restante verticalmente */
+    padding: 20px;
+    overflow-y: auto; /* Adiciona rolagem se as mensagens excederem a altura */
+    display: flex;
+    flex-direction: column; /* Mensagens uma abaixo da outra */
+    gap: 10px; /* Espaçamento entre os balões de mensagem */
+    /* Para mensagens aparecerem do fundo para cima (como em apps de chat) */
+    /* justify-content: flex-end; */
+}/* Balões de Mensagem */
+.mensagem-balao {
+    max-width: 70%; /* Largura máxima do balão */
+    padding: 10px 15px;
+    border-radius: 18px; /* Cantos arredondados do balão */
+    font-size: 15px;
+    line-height: 1.4;
+    position: relative; /* Para posicionar a hora */
+}
+
+.mensagem-balao p {
+    margin: 0;
+    margin-bottom: 8px; /* ADICIONADO: Margem inferior para o texto, afastando do horário */
+}
+
+.mensagem-balao .mensagem-hora {
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.4); /* Cor mais clara para a hora */
+    position: absolute;
+    bottom: 8px; /* ALTERADO AQUI: Aumentado de 5px para 8px para descer mais o horário */
+    /* right e left são definidos nos balões recebida/enviada, então não colocamos aqui */
+}
+
+
+.mensagem-balao.recebida {
+    background-color: #e9ecef; /* Fundo cinza claro para mensagens recebidas */
+    color: #333;
+    align-self: flex-start; /* Alinha à esquerda */
+    border-bottom-left-radius: 4px; /* Canto inferior esquerdo mais reto */
+}
+.mensagem-balao.recebida .mensagem-hora {
+    left: 10px;
+    right: auto;
+    bottom: 8px; /* ADICIONADO: Para garantir a consistência com o bottom genérico */
+}
+
+.mensagem-balao.enviada {
+    background-color: #6A8A65; /* Fundo verde para mensagens enviadas */
+    color: white;
+    align-self: flex-end; /* Alinha à direita */
+    border-bottom-right-radius: 4px; /* Canto inferior direito mais reto */
+}
+.mensagem-balao.enviada .mensagem-hora {
+    right: 10px;
+    left: auto;
+    bottom: 8px; /* ADICIONADO: Para garantir que o bottom seja aplicado nas mensagens enviadas */
+    color: rgba(255, 255, 255, 0.7); /* Hora mais clara para balão verde */
+}
+
+
+/* Área de Input de Mensagens */
+.chat-input-area {
+    background-color: #f8f9fa; /* Fundo da área de digitação */
+    padding: 15px 20px;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* Não encolhe */
+}
+
+.chat-input-mensagem {
+    flex-grow: 1; /* Ocupa o máximo de espaço */
+    padding: 12px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 25px; /* Bem arredondado */
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.chat-input-mensagem:focus {
+    border-color: #6A8A65;
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+}
+
+.chat-botao-enviar {
+    background-color: #6A8A65;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Impede que o botão encolha */
+}
+
+.chat-botao-enviar:hover {
+    background-color: #587554;
+    transform: translateY(-1px);
+}
+
+/* Responsividade básica para o chat */
+@media (max-width: 768px) {
+    .pagina-chat-container {
+        height: auto; /* Altura automática em telas menores */
+        min-height: 100vh;
+        box-shadow: none; /* Remove sombra em telas pequenas */
+    }
+
+    .chat-corpo {
+        flex-direction: column; /* Lista de conversas e chat ativo ficam em coluna */
+    }
+
+    .lista-conversas {
+        width: 100%; /* Ocupa a largura total */
+        border-right: none;
+        border-bottom: 1px solid #e9ecef; /* Adiciona borda na parte inferior */
+    }
+
+    .area-chat-ativa {
+        padding: 0; /* Remove padding extra */
+    }
+
+    .chat-header {
+        padding: 10px 15px;
+    }
+
+    .chat-mensagens {
+        padding: 15px;
+    }
+
+    .chat-input-area {
+        padding: 10px 15px;
+    }
+
+    .mensagem-balao {
+        max-width: 85%; /* Balões maiores em telas pequenas */
+    }
+}
