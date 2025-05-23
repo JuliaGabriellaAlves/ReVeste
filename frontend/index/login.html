@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ReVeste</title>
+    <link rel="stylesheet" href="../style/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container"> <div class="logo">
+                <a href="index.html">
+                    <img src="../img/image (16).png" alt="Ícone de cabide">
+                    <h1>ReVeste</h1>
+                </a>
+            </div>
+            <nav class="menu_principal">
+                <ul>
+                    <li><a href="index.html#favoritos" aria-label="Favoritos"><img src="../img/coracao.png" alt="Ícone de coração"></a></li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="publicar.html">Publicar Item</a></li>
+                    <li>
+                        <a href="cadastro.html" class="menu_usuario_link">
+                            <span>Cadastre-se</span>
+                            <img src="../img/fotoperfil.jpeg" alt="Ícone de Usuário">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-login">
+        <div class="card-login">
+            <h2 class="titulo-login">Acesse sua Conta</h2>
+            <p class="subtitulo-login">Bem-vindo(a) de volta ao ReVeste!</p>
+
+            <form class="form-login" action="#" method="POST">
+                <div class="input-container">
+                    <label for="email">E-mail ou Nome de Usuário</label>
+                    <input type="text" id="email" name="email_usuario" placeholder="Digite seu e-mail ou usuário" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="form-opcoes">
+                    <div class="checkbox-lembrar">
+                        <input type="checkbox" id="lembrar-me" name="lembrar-me">
+                        <label for="lembrar-me">Lembrar-me</label>
+                    </div>
+                    <a href="recuperar-senha.html" class="link-esqueceu-senha">Esqueceu sua senha?</a>
+                </div>
+
+                <button type="submit" class="botao-login">Entrar</button>
+
+                <p class="link-cadastro-inferior">
+                    Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui!</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2025 ReVeste - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

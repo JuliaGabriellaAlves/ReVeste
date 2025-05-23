@@ -1,0 +1,310 @@
+/* css/login.css - Estilos COMPLETOS para a página login.html - ReVeste */
+
+/* --- Estilos Globais e Base --- */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Fundo cinza claro para a página de login */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container { /* Container geral, usado no cabeçalho, rodapé e corpo, se necessário */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- Estilos do Cabeçalho (Consistentes com outras páginas autossuficientes) --- */
+.cabecalho {
+    background-color: #6A8A65;
+    color: #fff;
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.cabecalho .container { /* .container já definido acima será usado aqui */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 38px;
+    margin-right: 12px;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu_principal li {
+    margin-left: 25px;
+}
+
+.menu_principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.menu_principal a:hover,
+.menu_principal a.ativo {
+    color: #e0e0e0;
+    font-weight: 700;
+}
+
+.menu_principal a img { /* Ícone de coração/perfil no menu */
+    height: 24px; /* Altura padrão para ícones de texto */
+    vertical-align: middle;
+}
+.menu_usuario_link span { /* Para o texto "Cadastre-se" */
+    margin-right: 8px;
+    font-weight: 400;
+}
+.menu_usuario_link img { /* Para o ícone ao lado de "Cadastre-se" */
+    height: 30px; /* Pode ser um pouco maior se for foto/avatar */
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* border: 1px solid #fff; Opcional */
+}
+
+
+/* --- Estilos Específicos da Página de Login --- */
+.main-login {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; /* Espaçamento para o card não colar nas bordas em telas pequenas */
+    box-sizing: border-box;
+}
+
+.card-login {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra um pouco mais forte */
+    padding: 40px 50px; /* Mais padding lateral */
+    max-width: 480px; /* Largura máxima do card de login */
+    width: 100%;
+    text-align: center;
+}
+
+.titulo-login {
+    font-size: 28px;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo-login {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 35px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os elementos do formulário */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha labels à esquerda */
+    text-align: left; /* Garante que o texto do label esteja à esquerda */
+}
+
+.input-container label {
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-container input[type="text"],
+.input-container input[type="password"] {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    font-size: 15px;
+    color: #343a40;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-container input::placeholder {
+    color: #adb5bd;
+}
+
+.input-container input:focus {
+    border-color: #6A8A65; /* Borda verde ao focar */
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+    outline: none;
+}
+
+.form-opcoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -5px; /* Aproxima um pouco do campo de senha */
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.checkbox-lembrar {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-lembrar input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #6A8A65; /* Cor do checkbox quando marcado */
+}
+
+.checkbox-lembrar label {
+    color: #495057;
+    font-weight: 400;
+}
+
+.link-esqueceu-senha {
+    color: #6A8A65;
+    text-decoration: none;
+    font-weight: 600;
+}
+.link-esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+.botao-login {
+    background-color: #6A8A65;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px; /* Cantos bem arredondados */
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 100%; /* Botão ocupa a largura total */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+.botao-login:hover {
+    background-color: #587554;
+    transform: translateY(-2px);
+}
+
+.link-cadastro-inferior {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #495057;
+}
+
+.link-cadastro-inferior a {
+    color: #6A8A65;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-cadastro-inferior a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos do Rodapé (Consistentes com outras páginas autossuficientes) --- */
+.rodape {
+    background-color: #404040;
+    color: #ccc;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.rodape .container p {
+    margin: 0;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .cabecalho .container {
+        padding: 0 15px;
+    }
+    .main-login {
+        padding: 30px 15px;
+    }
+    .card-login {
+        padding: 30px;
+    }
+    .titulo-login {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 { font-size: 24px; }
+    .menu_principal ul { gap: 10px; /* Menos espaço entre itens do menu */ flex-wrap: wrap; justify-content: flex-end;}
+    .menu_principal li { margin-left: 0; margin-bottom: 5px; /* Para quando quebrar linha */ }
+    .menu_principal a { font-size: 14px; }
+
+    .card-login {
+        padding: 25px 20px;
+    }
+    .titulo-login {
+        font-size: 22px;
+    }
+    .subtitulo-login {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .input-container input[type="text"],
+    .input-container input[type="password"] {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .form-opcoes {
+        flex-direction: column; /* Opções empilhadas */
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .botao-login {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
