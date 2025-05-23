@@ -1,5 +1,26 @@
-/* Estilos específicos para a página Publicar Item (publicar.css) */
-/* --- Estilos do Cabeçalho (PARA COLOCAR NO style.css e SER GLOBAL) --- */
+/* Estilos COMPLETOS para a página publicar.html - ReVeste */
+/* Este arquivo agora contém estilos globais (cabeçalho, rodapé) e específicos da página. */
+
+/* --- Estilos Globais e Base --- */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Fundo claro geral da página */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no final */
+}
+
+.container { /* Container geral, usado no cabeçalho e rodapé */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Estilos do Cabeçalho (Agora parte deste arquivo) --- */
 .cabecalho {
     background-color: #6A8A65; /* Verde do cabeçalho */
     color: #fff; /* Cor padrão do texto no cabeçalho */
@@ -9,10 +30,8 @@
     flex-shrink: 0; /* Impede que o cabeçalho encolha em layouts flex */
 }
 
-.cabecalho .container { /* Contêiner interno para limitar largura e centralizar */
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza */
-    padding: 0 20px; /* Espaçamento lateral */
+/* .cabecalho .container usa a classe .container definida acima */
+.cabecalho .container {
     display: flex; /* Habilita Flexbox */
     justify-content: space-between; /* Espaça logo e menu para as extremidades */
     align-items: center; /* Alinha itens verticalmente ao centro */
@@ -21,88 +40,88 @@
 .logo {
     display: flex; /* Habilita Flexbox para alinhar ícone e H1 */
     align-items: center; /* Alinha ícone e H1 verticalmente */
-    /* Garante que o link do logo não tenha estilos indesejados de texto */
 }
 
-.logo a { /* Regra específica para o link dentro do logo */
-    text-decoration: none !important; /* REMOVE O SUBLINHADO AZUL/ROXO FORÇADAMENTE (usando !important) */
-    color: inherit; /* Garante que a cor do texto seja herdada do elemento pai (cabeçalho, que é branco) */
-    display: flex; /* Essencial para que a imagem e o H1 dentro do link fiquem lado a lado */
-    align-items: center; /* Alinha verticalmente os elementos dentro do link */
+.logo a {
+    text-decoration: none !important; /* REMOVE O SUBLINHADO */
+    color: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 38px; /* Tamanho do ícone do cabide */
-    margin-right: 12px; /* Espaço entre o ícone e o texto */
+    height: 38px;
+    margin-right: 12px;
 }
 
 .logo h1 {
-    margin: 0; /* Remove margens padrão do H1 */
-    font-size: 28px; /* Tamanho da fonte do "ReVeste" */
-    font-weight: 700; /* Negrito */
-    color: #fff; /* Cor branca para o texto "ReVeste" */
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
 }
 
 .menu_principal ul {
-    list-style: none; /* Remove marcadores de lista */
+    list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Habilita Flexbox para os itens do menu */
-    align-items: center; /* Alinha itens verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 .menu_principal li {
-    margin-left: 25px; /* Espaçamento entre os itens do menu */
+    margin-left: 25px;
 }
 
+
+
 .menu_principal a {
-    color: #fff; /* Cor dos links do menu */
-    text-decoration: none; /* Remove sublinhado dos links do menu */
+    color: #fff;
+    text-decoration: none;
     font-size: 16px;
-    display: flex; /* Habilita Flexbox para alinhar ícone e texto (ex: Joana + foto) */
+    display: flex;
     align-items: center;
-    transition: color 0.3s ease; /* Transição suave na cor */
+    transition: color 0.3s ease;
 }
 
 .menu_principal a:hover,
-.menu_principal a.ativo { /* Estilo para link ativo ou hover */
-    color: #e0e0e0; /* Cor mais clara no hover/ativo */
-    font-weight: 700; /* Negrito no ativo */
+.menu_principal a.ativo {
+    color: #e0e0e0;
+    font-weight: 700;
 }
 
-.menu_principal a img { /* Estilo para ícones no menu (coração) */
+.menu_principal a img {
     height: 24px;
     vertical-align: middle;
 }
 
 .menu_usuario span {
-    margin-right: 8px; /* Espaço entre o nome e a foto de perfil */
+    margin-right: 8px;
     font-weight: 400;
 }
 
-.menu_usuario img { /* Estilo para a foto de perfil */
+.menu_usuario img {
     height: 30px;
     width: 30px;
-    border-radius: 50%; /* Círculo */
+    border-radius: 50%;
     object-fit: cover;
-    border: 1px solid #fff; /* Borda branca na foto */
+    border: 1px solid #fff;
 }
 
-
-/* Layout principal do formulário */
+/* --- Estilos Específicos da Página de Publicação --- */
 .main-publicar {
-    padding: 40px 0; /* Espaçamento superior e inferior para a seção principal */
-    background-color: #f8f9fa; /* Fundo claro, consistente com as outras páginas */
-    flex-grow: 1; /* Faz o main ocupar o espaço restante na altura */
+    padding: 40px 0;
+    background-color: #f8f9fa;
+    flex-grow: 1;
 }
 
-.container-publicar {
-    max-width: 800px; /* Largura máxima para o formulário, para não ficar muito esticado */
-    margin: 0 auto; /* Centraliza o contêiner */
-    background-color: #fff; /* Fundo branco para o card do formulário */
+.container-publicar { /* Container específico para o conteúdo do formulário */
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave e evidente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .titulo-pagina {
@@ -120,11 +139,10 @@
     margin-bottom: 40px;
 }
 
-/* Estilos do Formulário */
 .form-publicar {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaçamento entre os grupos de formulário */
+    gap: 20px;
 }
 
 .form-grupo {
@@ -140,35 +158,33 @@
 }
 
 .form-grupo input[type="text"],
-.form-grupo input[type="file"],
+/* .form-grupo input[type="file"], (estilizado separadamente com .custom-file-input) */
 .form-grupo textarea,
 .form-grupo select {
     padding: 12px 15px;
     border: 1px solid #ced4da;
-    border-radius: 8px; /* Cantos levemente arredondados */
+    border-radius: 8px;
     font-size: 16px;
     color: #495057;
-    background-color: #fdfdfd; /* Fundo quase branco para inputs */
+    background-color: #fdfdfd;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    width: 100%; /* Ocupa a largura total do grupo */
-    box-sizing: border-box; /* Inclui padding e borda na largura total */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.form-grupo input[type="file"] {
-    padding: 10px 15px; /* Ajuste para inputs de arquivo */
-}
+/* Não precisa de .form-grupo input[type="file"] aqui pois usamos .custom-file-input */
 
 .form-grupo textarea {
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    resize: vertical;
     min-height: 100px;
 }
 
 .form-grupo input[type="text"]:focus,
 .form-grupo textarea:focus,
 .form-grupo select:focus {
-    border-color: #88B085; /* Borda verde suave ao focar */
-    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25); /* Sombra suave ao focar */
-    outline: none; /* Remove a borda de foco padrão do navegador */
+    border-color: #88B085;
+    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
+    outline: none;
 }
 
 .form-grupo small {
@@ -177,132 +193,142 @@
     margin-top: 5px;
 }
 
-/* Estilos para grupos de campos em linha */
 .form-grupo-linha {
     display: flex;
-    gap: 20px; /* Espaçamento entre os campos na mesma linha */
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .form-grupo-linha .form-grupo {
-    flex: 1; /* Faz os campos dividirem o espaço igualmente */
-    min-width: 280px; /* Largura mínima para evitar que fiquem muito apertados */
+    flex: 1;
+    min-width: 280px;
 }
 
-/* Botão de Publicar */
 .botao-publicar {
-    background-color: #6A8A65; /* Verde principal do ReVeste */
+    background-color: #6A8A65;
     color: white;
     padding: 15px 30px;
     border: none;
-    border-radius: 50px; /* Botão bem arredondado */
+    border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
-    margin-top: 20px; /* Espaçamento acima do botão */
-    align-self: center; /* Centraliza o botão no contêiner flex */
-    width: fit-content; /* Largura ajustada ao conteúdo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+    margin-top: 20px;
+    align-self: center;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .botao-publicar:hover {
-    background-color: #587554; /* Verde mais escuro no hover */
-    transform: translateY(-3px); /* Pequena elevação no hover */
+    background-color: #587554;
+    transform: translateY(-3px);
 }
 
-/* --- Responsividade --- */
-@media (max-width: 768px) {
-    .container-publicar {
-        padding: 30px 20px; /* Ajusta o padding em telas menores */
-    }
-
-    .titulo-pagina {
-        font-size: 28px;
-    }
-
-    .subtitulo-pagina {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-
-    .form-grupo-linha {
-        flex-direction: column; /* Em telas muito pequenas, campos em linha viram coluna */
-        gap: 15px;
-    }
-
-    .form-grupo-linha .form-grupo {
-        min-width: unset; /* Remove a largura mínima para ocupar 100% */
-        width: 100%;
-    }
-
-    .botao-publicar {
-        width: 100%; /* Botão ocupa a largura total em telas menores */
-        font-size: 17px;
-    }
-}
-
-
-/* Estilos para o campo de upload de arquivo customizado */
 .custom-file-input {
-    display: flex; /* Para alinhar o botão e o texto lado a lado */
-    align-items: center; /* Alinha verticalmente */
+    display: flex;
+    align-items: center;
     border: 1px solid #ced4da;
     border-radius: 8px;
     background-color: #fdfdfd;
-    padding: 5px; /* Padding interno para a área toda */
+    padding: 5px;
     box-sizing: border-box;
-    width: 100%; /* Ocupa a largura total do grupo */
-    overflow: hidden; /* Garante que o conteúdo não vaze */
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Esconde o input file nativo, mas o mantém acessível */
 .custom-file-input input[type="file"] {
-    position: absolute; /* Posição absoluta para tirá-lo do fluxo normal */
-    left: -9999px; /* Manda ele para bem longe da tela */
-    /* opacity: 0; /* Alternativa: torna invisível, mas mantem na posição */
-    /* width: 0.1px; height: 0.1px; */
-    /* overflow: hidden; */
-    /* z-index: -1; */
+    position: absolute;
+    left: -9999px;
 }
 
 .custom-file-button {
-    background-color: #6A8A65; /* Cor do botão, similar ao seu design */
+    background-color: #6A8A65;
     color: white;
     padding: 10px 15px;
-    border-radius: 6px; /* Cantos arredondados para o botão */
+    border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
     transition: background-color 0.2s ease;
-    flex-shrink: 0; /* Impede que o botão encolha */
-    white-space: nowrap; /* Evita que o texto do botão quebre */
-    margin-right: 10px; /* Espaço entre o botão e o texto do arquivo */
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-right: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .custom-file-button:hover {
-    background-color: #587554; /* Cor mais escura no hover */
+    background-color: #587554;
 }
 
 .file-names-display {
-    flex-grow: 1; /* Ocupa o restante do espaço disponível */
+    flex-grow: 1;
     color: #495057;
     font-size: 16px;
-    white-space: nowrap; /* Impede que o texto quebre */
-    overflow: hidden; /* Esconde o texto que excede a largura */
-    text-overflow: ellipsis; /* Adiciona "..." ao final do texto longo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5; /* Para melhor alinhamento vertical com o botão */
+    padding: 5px 0; /* Ajuste para alinhar com o padding do botão */
 }
 
-/* Garante que o contêiner do input customizado também receba o estilo de foco */
-.form-grupo input[type="file"]:focus + .custom-file-button {
-    border-color: #88B085; /* Borda verde suave ao focar */
-    box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25); /* Sombra suave ao focar */
-    outline: none; /* Remove a borda de foco padrão do navegador */
-}
-/* Ou, se preferir o foco na área total: */
-.custom-file-input:focus-within { /* Aplica estilo quando um elemento dentro dele está focado */
+.custom-file-input:focus-within {
     border-color: #88B085;
     box-shadow: 0 0 0 3px rgba(106, 138, 101, 0.25);
     outline: none;
+}
+
+
+/* --- Estilos do Rodapé (copiados/adaptados do style.css da home) --- */
+.rodape {
+    background-color: #404040;
+    color: #ccc;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto; /* Garante que o rodapé fique no final */
+    width: 100%;
+    flex-shrink: 0; /* Impede que o rodapé encolha */
+}
+
+/* .rodape .container usa a classe .container global */
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .container { /* Ajuste no container geral para telas menores */
+        padding: 0 15px;
+    }
+    .cabecalho .container { /* Ajuste para o container do cabeçalho */
+        padding: 0 15px;
+    }
+    .container-publicar {
+        padding: 30px 20px;
+    }
+    .titulo-pagina {
+        font-size: 28px;
+    }
+    .subtitulo-pagina {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    .form-grupo-linha {
+        flex-direction: column;
+        gap: 15px; /* Reduzido para quando empilha */
+    }
+    .form-grupo-linha .form-grupo {
+        min-width: unset;
+        width: 100%;
+    }
+    .botao-publicar {
+        width: 100%;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 { font-size: 24px; }
+    .menu_principal li { margin-left: 15px; }
+    .menu_principal a { font-size: 14px; }
+    .titulo-pagina { font-size: 24px; }
+    .container-publicar { padding: 20px 15px; }
 }
