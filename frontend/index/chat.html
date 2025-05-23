@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/conversa.css"> <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/conversa.css"> <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Conversa - ReVeste</title>
 </head>
 <body>
@@ -16,17 +16,17 @@
         <header class="cabecalho">
             <div class="container-cabecalho">
                 <div class="logo">
-                    <a href="index.html"><img src="img/image (16).png" alt="Ícone de cabide"></a>
+                    <a href="index.html"><img src="../img/image (16).png" alt="Ícone de cabide"></a>
                     <a href="index.html"><h1>ReVeste</h1></a>
                 </div>
                 <nav class="menu_principal">
                     <ul>
-                        <li><a href="favoritos.html" aria-label="Favoritos"><img src="img/coracao.png" alt="Ícone de coração"></a></li>
+                        <li><a href="favoritos.html" aria-label="Favoritos"><img src="../img/coracao.png" alt="Ícone de coração"></a></li>
                         <li><a href="conversa.html" class="ativo">Chat</a></li> <li><a href="publicar.html">Publicar Item</a></li>
                         <li>
                             <a href="perfil.html" class="menu_usuario">
                                 <span>Joana</span>
-                                <img src="img/fotoperfil.jpeg" alt="Foto de Joana">
+                                <img src="../img/fotoperfil.jpeg" alt="Foto de Joana">
                             </a>
                         </li>
                     </ul>
@@ -38,9 +38,8 @@
             <aside class="lista-conversas">
                 <h2>Mensagens</h2>
                 <ul class="conversas">
-                    <a href="conversa.html" class="conversa-link">
-                        <li class="conversa-item">
-                            <img src="img/vestidofem.jpeg" alt="Vestido Linho" class="conversa-imagem-produto">
+                    <a href="conversa.html" class="conversa-link"> <li class="conversa-item">
+                            <img src="../img/vestidofem.jpeg" alt="Vestido Linho" class="conversa-imagem-produto">
                             <div class="conversa-info">
                                 <span class="conversa-contato-tempo">Anna Silva - Ontem</span>
                                 <span class="conversa-produto-nome">Vestido Linho</span>
@@ -48,8 +47,7 @@
                             </div>
                         </li>
                     </a>
-                    <a href="conversa.html" class="conversa-link">
-                        <li class="conversa-item ativo"> <img src="img/VansMasc.jpeg" alt="Vans original" class="conversa-imagem-produto">
+                    <a href="conversa.html" class="conversa-link"> <li class="conversa-item"> <img src="../img/VansMasc.jpeg" alt="Vans original" class="conversa-imagem-produto">
                             <div class="conversa-info">
                                 <span class="conversa-contato-tempo">Lucas Lima - Sexta</span>
                                 <span class="conversa-produto-nome">Vans original</span>
@@ -57,9 +55,8 @@
                             </div>
                         </li>
                     </a>
-                    <a href="conversa.html" class="conversa-link">
-                        <li class="conversa-item">
-                            <img src="img/MoletomMarrom.jpeg" alt="Casaco de Couro" class="conversa-imagem-produto">
+                    <a href="conversa.html" class="conversa-link"> <li class="conversa-item">
+                            <img src="../img/MoletomMarrom.jpeg" alt="Casaco de Couro" class="conversa-imagem-produto">
                             <div class="conversa-info">
                                 <span class="conversa-contato-tempo">JP - 12/02/25</span>
                                 <span class="conversa-produto-nome">Casaco de co...</span>
@@ -67,9 +64,8 @@
                             </div>
                         </li>
                     </a>
-                    <a href="conversa.html" class="conversa-link">
-                        <li class="conversa-item">
-                            <img src="img/Calcamole.jpeg" alt="Calça de moletom" class="conversa-imagem-produto">
+                    <a href="conversa.html" class="conversa-link"> <li class="conversa-item">
+                            <img src="../img/Calcamole.jpeg" alt="Calça de moletom" class="conversa-imagem-produto">
                             <div class="conversa-info">
                                 <span class="conversa-contato-tempo">Maria - 23/12/24</span>
                                 <span class="conversa-produto-nome">Casaco de co...</span>
@@ -80,21 +76,20 @@
                 </ul>
             </aside>
             <section class="area-chat-ativa">
-                <div class="chat-boas-vindas" style="display: none;">
-                    <p class="texto-boas-vindas">
+                <div class="chat-boas-vindas"> <p class="texto-boas-vindas">
                         Converse com outros usuários do ReVeste para doar ou
                         solicitar roupas, promovendo a moda sustentável.
                     </p>
                     <div class="logo-grande-container">
-                        <img src="img/logoreveste2.jpg" alt="Logo ReVeste Grande" class="logo-centralizado-grande">
+                        <img src="../img/logoreveste2.jpg" alt="Logo ReVeste Grande" class="logo-centralizado-grande">
                         <h1 class="logo-chat-texto-grande">ReVeste</h1>
                         <p class="logo-chat-subtexto">Moda sustentável</p>
                     </div>
                 </div>
 
-                <div class="chat-conversa-ativa"> <div class="chat-header">
+                <div class="chat-conversa-ativa" style="display: none;"> <div class="chat-header">
                         <div class="chat-header-info">
-                            <img src="img/VansMasc.jpeg" alt="Vans original" class="chat-header-img-produto">
+                            <img src="../img/VansMasc.jpeg" alt="Vans original" class="chat-header-img-produto">
                             <div>
                                 <span class="chat-header-nome-contato">Lucas Lima</span>
                                 <p class="chat-header-nome-produto">Vans original</p>
@@ -138,5 +133,6 @@
         </main>
     </div>
 
-    </body>
+    <script src="js/conversa.js"></script> 
+</body>
 </html>
